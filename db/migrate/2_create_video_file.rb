@@ -1,6 +1,5 @@
-class CreateVideoFile < ActiveRecord::Migration
-
-  def up
+class CreateVideoFile < ActiveRecord::Migration[4.2]
+  def change
     create_table "refinery_video_files", :force => true do |t|
       t.string   "file_name"
       t.integer  "file_size"
@@ -13,13 +12,5 @@ class CreateVideoFile < ActiveRecord::Migration
       t.string   "external_url"
       t.boolean  "use_external"
     end
-
   end
-
-  def down
-
-    drop_table :refinery_video_files
-
-  end
-
 end
